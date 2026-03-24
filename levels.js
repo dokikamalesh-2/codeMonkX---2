@@ -75,7 +75,7 @@ loadLevels(topic.innerText);
 });
 
 function goToLevelsPage(){
-    window.location.href ="game.html";
+    window.location.href ="game.html";          
 }
 
 loadLevels("01. Basics");
