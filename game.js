@@ -5,6 +5,10 @@ const scoreText = document.getElementById('score');
 const progressBarFull = document.getElementById('progressBarFull');
 const loader = document.getElementById('loader');
 const game = document.getElementById('game');
+const timerText = document.getElementById('timer');
+let timerInterval;
+let timeLeft = 15;
+const TIMER_SECONDS = 15;
 let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
@@ -14,7 +18,7 @@ let availableQuesions = [];
 let questions = [];
 
 fetch(
-    `https://opentdb.com/api.php?amount=10&category=11&difficulty=easy&type=multiple`
+    `https://opentdb.com/api.php?amount=5&category=18&type=multiple`
 )
     .then((res) => {
         return res.json();
@@ -48,7 +52,7 @@ fetch(
 
 //CONSTANTS
 const CORRECT_BONUS = 10;
-const MAX_QUESTIONS = 3;
+const MAX_QUESTIONS = 5;
 
 startGame = () => {
     questionCounter = 0;
@@ -81,6 +85,7 @@ getNewQuestion = () => {
 
     availableQuesions.splice(questionIndex, 1);
     acceptingAnswers = true;
+    startTimer(); 
 };
 
 choices.forEach((choice) => {
@@ -88,24 +93,78 @@ choices.forEach((choice) => {
         if (!acceptingAnswers) return;
 
         acceptingAnswers = false;
+        stopTimer();
+
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset['number'];
 
         const classToApply =
             selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
 
+        // If correct, increase score
         if (classToApply === 'correct') {
             incrementScore(CORRECT_BONUS);
         }
 
+        // Mark the selected option
         selectedChoice.parentElement.classList.add(classToApply);
 
+        // 🔥 NEW: Show the correct answer if user was wrong
+        if (classToApply === 'incorrect') {
+            choices.forEach((choice) => {
+                if (choice.dataset['number'] == currentQuestion.answer) {
+                    choice.parentElement.classList.add('correct');
+                }
+            });
+        }
+
         setTimeout(() => {
-            selectedChoice.parentElement.classList.remove(classToApply);
+            // Remove all highlight classes before next question
+            choices.forEach((choice) => {
+                choice.parentElement.classList.remove('correct', 'incorrect');
+            });
             getNewQuestion();
         }, 1000);
     });
 });
+
+startTimer = () => {
+    timeLeft = TIMER_SECONDS;
+    timerText.innerText = timeLeft;
+
+    timerInterval = setInterval(() => {
+        timeLeft--;
+        timerText.innerText = timeLeft;
+
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            autoSkipQuestion();
+        }
+    }, 1000);
+};
+
+stopTimer = () => {
+    clearInterval(timerInterval);
+};
+
+autoSkipQuestion = () => {
+    acceptingAnswers = false;
+
+    // show correct answer
+    choices.forEach((choice) => {
+        if (choice.dataset['number'] == currentQuestion.answer) {
+            choice.parentElement.classList.add('correct');
+        }
+    });
+
+    setTimeout(() => {
+        choices.forEach((choice) => {
+            choice.parentElement.classList.remove('correct', 'incorrect');
+        });
+        getNewQuestion();
+    }, 1000);
+};
+
 
 incrementScore = (num) => {
     score += num;
