@@ -66,6 +66,12 @@
   width: 0%;
 }
 
+#timer {
+  color: #56a5eb;
+  font-weight: bold;
+}
+
+
 /* LOADER */
 #loader {
   border: 0.5rem solid white;
