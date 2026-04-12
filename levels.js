@@ -80,5 +80,34 @@ function goToLevelsPage(){
 
 loadLevels("01. Basics");
 
+const profileBtn = document.getElementById("profileBtn");
+const dropdown = document.getElementById("dropdownMenu");
+
+profileBtn.addEventListener("click", (e) => {
+    e.stopPropagation(); // prevent immediate closing
+    dropdown.classList.toggle("show");
+});
+
+window.addEventListener("click", (e) => {
+    if (!profileBtn.contains(e.target)) {
+        dropdown.classList.remove("show");
+    }
+});
+
+function goToProfile(){
+    window.location.href = "profile.html";
+}
+
+function goToSettings(){
+    alert("Settings coming soon");
+}
+
+function logout(){
+    alert("Logged out!");
+}
+
+
+
+
 
 

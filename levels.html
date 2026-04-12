@@ -11,6 +11,23 @@
 <div class="topbar">
     <div class="menu-btn" id="menuBtn">☰</div>
     <h2>Quiz Path</h2>
+   <div class="profile" id="profileBtn">
+    <img src="images/profle.png" alt="Profile">
+
+    <div class="dropdown" id="dropdownMenu">
+        <div class="dropdown-header">
+            <img src="images/profle.png">
+            <div>
+                <p class="name">Kamalesh</p>
+                <p class="email">example@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="dropdown-item" onclick="goToProfile()">👤 My Profile</div>
+        <div class="dropdown-item" onclick="goToSettings()">⚙️ Settings</div>
+        <div class="dropdown-item logout" onclick="logout()">🚪 Logout</div>
+    </div>
+</div>
 </div>
 
 <div class="page">
@@ -26,7 +43,7 @@
 
     <!-- Content -->
     <div class="content">
-        <h2 id="topicTitle">HTML Basics</h2>
+        <h2 id="topicTitle">C</h2>
         <div class="levels" id="levelsContainer"></div>
     </div>
 
