@@ -6,19 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Congrats!</title>
     <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="end.css">
   </head>
   <body>
     <div class="container">
       <div id="end" class="flex-center flex-column">
         <h1 id="finalScore"></h1>
+          <div class="score-circle">
+           <svg width="160" height="160">
+            <circle class="bg" cx="80" cy="80" r="70"></circle>
+            <circle class="progress" cx="80" cy="80" r="70"></circle>
+           </svg>
+            <div class="score-text" id="scoreText">0%</div>
+          </div>
+
        <form>
   <input type="text" id="username" placeholder="username" />
   <button type="submit" class="btn" id="saveScoreBtn" disabled>
     Save
   </button>
-</form>
-        <a class="btn" href="/game.html">Play Again</a>
-        <a class="btn" href="/home.html">Go Home</a>
+      </form>
+        <a class="btn" href="game.html">Play Again</a>
+        <a class="btn" href="home.html">Go Home</a>
       </div>
     </div>
     <script src="end.js"></script>
