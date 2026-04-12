@@ -135,3 +135,89 @@ opacity:0.6;
 background:#b5c8ff;
 cursor:not-allowed;
 }
+
+/*drop down*/
+.profile {
+    margin-left: auto;
+    margin-right: 35px;
+    position: relative;
+}
+
+/* Profile image */
+.profile img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+/* Dropdown container */
+.dropdown {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 220px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+
+    opacity: 0;
+    transform: translateY(-15px) scale(0.95);
+    transition: all 0.25s ease;
+    color:#56a5eb;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Show animation */
+.dropdown.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+/* Header (profile info) */
+.dropdown-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown-header img {
+    width: 40px;
+    height: 40px;
+}
+
+.name {
+    font-weight: bold;
+    margin: 0;
+}
+
+.email {
+    font-size: 12px;
+    color: gray;
+    margin: 0;
+}
+
+/* Items */
+.dropdown-item {
+    padding: 12px 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* Hover effect */
+.dropdown-item:hover {
+    background: #f5f7fa;
+}
+
+/* Logout special color */
+.logout {
+    color: #e74c3c;
+}
+.logout:hover {
+    background: #fdecea;
+}
