@@ -5,6 +5,28 @@ background:#ecf5ff;
 color:#1b2a41;
 }
 
+#loader {
+  position: fixed;              /* take full screen */
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  border: 0.25rem solid white;
+  border-radius: 50%;
+  border-top: 0.25rem solid #56a5eb;
+  width: 2.5rem;
+  height: 2.5rem;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .topbar{
 height:60px;
 background:#56a5eb;

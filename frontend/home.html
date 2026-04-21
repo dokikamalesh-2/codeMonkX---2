@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CodeMonkX</title>
+  <link rel="stylesheet" href="home.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div id="home" class="flex-center flex-column">
+      
+      <h1>CodeMonkX</h1>
+      <p id="welcomeText"></p>
+
+      <a class="btn" id="playBtn">Play</a>
+      <a class="btn" id="profileBtn">Profile</a>
+      <button class="btn" onclick="logout()">Logout</button>
+
+    </div>
+  </div>
+
+<script>
+  const user = localStorage.getItem("username");
+
+  // 🔐 If not logged in → go to login
+  if (!user) {
+    window.location.href = "login.html";
+  }
+
+
+  // 👋 Welcome message
+  document.getElementById("welcomeText").textContent =
+    "Welcome, " + user;
+
+  // ▶ Play → go to language selection
+  document.getElementById("playBtn").addEventListener("click", () => {
+    window.location.href = "choice.html";
+  });
+
+  // 👤 Profile
+  document.getElementById("profileBtn").addEventListener("click", () => {
+    window.location.href = "profile.html";
+  });
+
+  // 🚪 Logout
+  function logout() {
+    localStorage.clear();
+    window.location.href = "login.html";
+  }
+</script>
+
+</body>
+</html>

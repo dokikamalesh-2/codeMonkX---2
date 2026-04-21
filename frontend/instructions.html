@@ -16,7 +16,7 @@
      <h3>Instructions</h3>
        <ul class="inst-list">
         <li>You will be asked <strong>5 questions</strong>  one after another.</li>
-        <li>Each question has a <strong>10 second</strong> time limit.</li>
+        <li>Each question has a <strong>15 second</strong> time limit.</li>
         <li>You cannot select any option after time runs out.</li>
         <li>Your score will be shown at the end of the quiz.</li>
         </ul>
@@ -25,6 +25,19 @@
      </div>
 
 </div>
+
+<script>
+    
+    // 🔐 Auth check
+    if (!localStorage.getItem("username")) {
+        window.location.href = "login.html";
+    }
+
+    // 🎯 Flow check (important)
+    if (!localStorage.getItem("currentLevel") || !localStorage.getItem("currentTopic")) {
+        window.location.href = "levels.html";
+    }
+</script>
 
 
 
