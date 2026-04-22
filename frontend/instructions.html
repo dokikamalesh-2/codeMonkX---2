@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructions</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div id="home" class="flex-center flex-column">
+       
+    <div class="inst-card">
+     <h3>Instructions</h3>
+       <ul class="inst-list">
+        <li>You will be asked <strong>5 questions</strong>  one after another.</li>
+        <li>Each question has a <strong>15 second</strong> time limit.</li>
+        <li>You cannot select any option after time runs out.</li>
+        <li>Your score will be shown at the end of the quiz.</li>
+        </ul>
+     </div>
+         <a class="btn" href="game.html">Play</a>
+     </div>
+
+</div>
+
+<script>
+    
+    // 🔐 Auth check
+    if (!localStorage.getItem("username")) {
+        window.location.href = "login.html";
+    }
+
+    // 🎯 Flow check (important)
+    if (!localStorage.getItem("currentLevel") || !localStorage.getItem("currentTopic")) {
+        window.location.href = "levels.html";
+    }
+</script>
+
+
+
+</body>
+</html>

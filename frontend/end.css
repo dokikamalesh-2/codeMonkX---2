@@ -1,0 +1,151 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-color: #ecf5ff;;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container Card */
+.container {
+  background: white;
+  height: 600px;
+  width: 420px;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 140, 255, 0.25);
+  text-align: center;
+}
+
+/* Title score */
+#finalScore {
+  font-size: 42px;
+  color: #0a6ebd;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Circle score area */
+.score-circle {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 25px auto;
+}
+
+.score-circle svg {
+  transform: rotate(-90deg);
+}
+
+.score-circle circle {
+  fill: none;
+  stroke-width: 12;
+  stroke-linecap: round;
+}
+
+.bg {
+  stroke: #e6f4ff;
+}
+
+.progress {
+  stroke: #1ea7ff;
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+  transition: stroke-dashoffset 1s ease;
+}
+
+.score-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  font-weight: bold;
+  color: #0a6ebd;
+}
+
+/* Form */
+form {
+  margin-top: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid #a6dcff;
+  margin-bottom: 12px;
+  font-size: 16px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #1ea7ff;
+}
+
+
+
+
+
+#saveScoreBtn:disabled {
+  cursor: not-allowed;
+}
+
+/*  login */
+
+.login-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;   
+  justify-content: center;
+  align-items: center;
+}
+
+
+.main-title {
+  font-size: 4rem;
+  color: #56a5eb;
+  margin-bottom: 2rem;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 40rem;
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 140, 255, 0.15);
+  text-align: center;
+}
+
+
+.login-card h3 {
+  font-size: 2.2rem;
+  color: #56a5eb;
+  margin-bottom: 2rem;
+}
+.login-page input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid #a6dcff;
+  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+}
+
+.login-page input:focus {
+  border-color: #1ea7ff;
+}
+
+.login-page .btn {
+  width: 100%;
+  border-radius: 2rem;
+}

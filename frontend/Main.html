@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeMonkX</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #ecf5ff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #56a5eb;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            font-size: 1rem;
+            color: #888;
+            font-weight: 400;
+            margin-bottom: 50px;
+        }
+
+        .btn {
+            display: block;
+            text-decoration: none;
+            width: 220px;
+            padding: 14px 0;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 14px;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+
+        .btn-primary {
+            background: #56a5eb;
+            color: white;
+            box-shadow: 0 6px 20px rgba(86, 165, 235, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(86, 165, 235, 0.5);
+        }
+
+        .btn-outline {
+            background: white;
+            color: #56a5eb;
+            border: 2px solid #56a5eb;
+        }
+
+        .btn-outline:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(86, 165, 235, 0.2);
+        }
+
+        .langs {
+            margin-top: 50px;
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .lang {
+            background: white;
+            color: #56a5eb;
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 5px 14px;
+            border-radius: 50px;
+            border: 1px solid rgba(86, 165, 235, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo">CodeMonkX</div>
+    <p class="tagline">Quiz your way to better code.</p>
+
+    <a href="login.html" class="btn btn-primary">Get Started</a>
+    <!-- <a href="highscores.html" class="btn btn-outline">High Scores</a> -->
+
+    <div class="langs">
+        <span class="lang">C</span>
+        <span class="lang">C++</span>
+        <span class="lang">Python</span>
+        <span class="lang">Java</span>
+    </div>
+
+</body>
+</html>
