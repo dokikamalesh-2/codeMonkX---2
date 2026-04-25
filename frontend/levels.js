@@ -98,12 +98,13 @@ async function loadLevels(topicName) {
         div.classList.add(status);
 
         div.innerHTML = `
-            <span>Level ${i}</span>
-            <button 
-                ${status === 'locked' ? 'disabled' : ''}
-                onclick="goToGame('${topicName}', ${i})">
-                ${status === 'completed' ? 'Replay' : 'Start'}
-            </button>
+        <span>Level ${i}</span>
+        <button 
+        class="btn ${status}"
+        ${status !== 'active' ? 'disabled' : ''}
+        onclick="${status === 'active' ? `goToGame('${topicName}', ${i})` : ''}">
+        ${status === 'completed' ? 'Completed' : status === 'active' ? 'Start' : 'Locked'}
+        </button>
         `;
 
         levelsContainer.appendChild(div);
